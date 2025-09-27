@@ -140,9 +140,9 @@ bash test.sh work_dirs/sfcan_rural2urban/
 
 ### Key Configuration Files
 
-- `configs/sfcan/loveda_sfcan_mitb5.py`: LoveDA dataset configuration
-- `configs/sfcan/rural2urban_sfcan_mitb5.py`: Rural-to-Urban adaptation
-- `configs/_base_/models/sfcan_mitb5.py`: SF-CAN model architecture
+- `configs/_base_/datasets/smda_syntheworld_Xloveda_to_loveda_512x512.py`: Syntheworld to LoveDA adaptation
+- `configs/_base_/datasets/smda_R2U_5percent_512x512.py`: Rural-to-Urban adaptation
+- `configs/_base_/models/daformer_sepaspp_vib_mitb5.py`: SF-CAN model architecture
 
 ### Hyperparameter Tuning
 
