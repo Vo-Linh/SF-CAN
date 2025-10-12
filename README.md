@@ -1,13 +1,15 @@
 <div align="center">
 
-# SF-CAN: Sparse-Feature and Confidence-Aware Network for Semi-Supervised Domain Adaptation in Satellite Imagery Segmentation
+# Stochastic and Confidence-Aware Network (SCAN)-based
+Semi-Supervised Domain Adaptation for Satellite Imagery
+Segmentation
 
 [![Paper](https://img.shields.io/badge/Paper-PDF-red.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.7+-orange.svg)](https://pytorch.org)
 
-**[Manh-Hung Nguyen]()*<sup>†</sup>, [Van-Linh Vo]()*, [Long-Thien Bui](), [Ching-Chung Huang]()**
+**[Manh-Hung Nguyen]()<sup>\*</sup><sup>†</sup>, [Van-Linh Vo]()<sup>\*</sup>, [Long-Thien Bui](), [Chi-Cuong Vu](), [Ching-Chung Huang]()**
 
 *Equal contribution, <sup>†</sup>Corresponding author
 
@@ -17,7 +19,7 @@
 
 ## 🚀 Overview
 
-**SF-CAN** introduces a novel approach for semi-supervised domain adaptation in satellite imagery segmentation, addressing the critical challenge of domain shift between synthetic training data and real-world satellite images. Our method combines sparse feature learning with confidence-aware mechanisms to achieve state-of-the-art performance on challenging satellite segmentation benchmarks.
+**SCAN** introduces a novel approach for semi-supervised domain adaptation in satellite imagery segmentation, addressing the critical challenge of domain shift between synthetic training data and real-world satellite images. Our method combines sparse feature learning with confidence-aware mechanisms to achieve state-of-the-art performance on challenging satellite segmentation benchmarks.
 
 ### 🔑 Key Contributions
 
@@ -33,13 +35,13 @@ Our method achieves superior performance on standard satellite imagery segmentat
 | Method | LoveDA | UAV2Seg | Rural-to-Urban | Urban-to-Rural |
 |--------|---------|---------|----------------|----------------|
 | Baseline | 45.2 | 42.8 | 38.5 | 41.2 |
-| **SF-CAN (Ours)** | **52.7** | **49.3** | **45.8** | **47.6** |
+| **SCAN (Ours)** | **52.7** | **49.3** | **45.8** | **47.6** |
 
 ---
 
 ##  Architecture
 
-SF-CAN consists of three main components:
+SCAN consists of three main components:
 
 1. **Sparse Feature Extractor**: Learns domain-invariant sparse representations
 2. **Confidence-Aware Module**: Estimates prediction confidence for pseudo-labeling
@@ -142,11 +144,11 @@ bash test.sh work_dirs/sfcan_rural2urban/
 
 - `configs/_base_/datasets/smda_syntheworld_Xloveda_to_loveda_512x512.py`: Syntheworld to LoveDA adaptation
 - `configs/_base_/datasets/smda_R2U_5percent_512x512.py`: Rural-to-Urban adaptation
-- `configs/_base_/models/daformer_sepaspp_vib_mitb5.py`: SF-CAN model architecture
+- `configs/_base_/models/daformer_sepaspp_vib_mitb5.py`: SCAN model architecture
 
 ### Hyperparameter Tuning
 
-Key hyperparameters for SF-CAN:
+Key hyperparameters for SCAN:
 
 ```python
 # Sparse feature learning
@@ -170,10 +172,10 @@ max_iters = 40000
 |--------|------|----------|------|-------|--------|--------------|
 | DeepLabV3+ | 48.5 | 65.2 | 58.1 | 72.3 | 51.2 | 45.7 |
 | DAFormer | 50.1 | 67.8 | 60.4 | 74.5 | 53.8 | 47.2 |
-| **SF-CAN** | **52.7** | **70.3** | **63.2** | **76.8** | **56.1** | **49.3** |
+| **SCAN** | **52.7** | **70.3** | **63.2** | **76.8** | **56.1** | **49.3** |
 
 #### Cross-Domain Results
-| Source → Target | Baseline | DAFormer | **SF-CAN** |
+| Source → Target | Baseline | DAFormer | **SCAN** |
 |-----------------|----------|----------|------------|
 | Rural → Urban | 38.5 | 42.1 | **45.8** |
 | Urban → Rural | 41.2 | 44.3 | **47.6** |
@@ -214,7 +216,7 @@ class CustomDataset(CustomDataset):
 
 ### Model Customization
 
-Modify the SF-CAN architecture:
+Modify the SCAN architecture:
 
 ```python
 # configs/_base_/models/custom_sfcan.py
@@ -245,22 +247,18 @@ Key ablation studies demonstrating the effectiveness of each component:
 
 ## 📝 Citation
 
-If you find SF-CAN useful in your research, please cite:
+If you find SCAN useful in your research, please cite:
 
 ```bibtex
 @article{nguyen2024sfcan,
-  title={SF-CAN: Sparse-Feature and Confidence-Aware Network for Semi-Supervised Domain Adaptation in Satellite Imagery Segmentation},
+  title={Stochastic and Confidence-Aware Network (SCAN)-based
+Semi-Supervised Domain Adaptation for Satellite Imagery
+Segmentation},
   author={Nguyen, Manh-Hung and Vo, Van-Linh and Bui, Long-Thien and Huang, Ching-Chung},
-  journal={Conference Name},
+  journal={},
   year={2024}
 }
 ```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -280,7 +278,7 @@ Special thanks to the satellite imagery community for dataset contributions and 
 ## 📞 Contact
 
 - **Manh-Hung Nguyen**: [hungnm@hcmute.edu.vn](mailto:hungnm@hcmute.edu.vn)
-- **Project Homepage**: [https://github.com/username/SF-CAN](https://github.com/username/SF-CAN)
+- **Project Homepage**: [https://github.com/Vo-Linh/SCAN](https://github.com/Vo-Linh/SF-CAN.git)
 
 ---
 
