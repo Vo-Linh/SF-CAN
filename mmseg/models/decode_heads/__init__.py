@@ -11,6 +11,7 @@ from .psp_head import PSPHead
 from .segformer_head import SegFormerHead, SegFormerVIBHead
 from .sep_aspp_head import DepthwiseSeparableASPPHead
 from .uper_head import UPerHead
+from .unetformer_head import UNetFormerHead
 from .vib_head import FPN_VIB_Head
 __all__ = [
     'FCNHead',
@@ -26,4 +27,5 @@ __all__ = [
     'ISAHead',
     'DAFormerVIBHead',
     'FPN_VIB_Head',
+    'UNetFormerHead',
 ]
